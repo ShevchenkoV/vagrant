@@ -1,9 +1,9 @@
+#!/usr/bin/env bash
 
-# Host
-vagrant ssh
+echo "Installing: nodejs, lynx, ruby and jekyll..."
 
-# Guest
-sudo apt-get update -y
-sudo apt-get install nodejs -y
-sudo apt-get install lynx-cur -y
-sudo apt-get install ruby1.9.1-dev -y
+apt-get update -y >>/tmp/provision-script.log 2>&1
+apt-get install nodejs -y >>/tmp/provision-script.log 2>&1
+apt-get install lynx-cur -y >>/tmp/provision-script.log 2>&1
+apt-get install ruby1.9.1-dev -y >>/tmp/provision-script.log 2>&1
+gem install jekyll >>/tmp/provision-script.log 2>&1
